@@ -1,0 +1,122 @@
+/* App.css */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+.Game-Container {
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  gap: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Light black grid lines with slight glow */
+  background-color: #333;
+  width: 80vmin; /* Set the width to 80% of the viewport width */
+  height: 80vmin; /* Set the height to 80% of the viewport height */
+  max-width: 800px; /* Limit the maximum width */
+  max-height: 800px; /* Limit the maximum height */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1); /* Enhanced glow effect */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  overflow: hidden; /* Hide any overflowing content */
+  /* background-image: url('your-background-image.jpg'); Replace with your background image URL */
+  background-size: cover; /* Cover the entire container */
+}
+
+.Cell {
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(25, 25, 25, 0.2); /* Light border color */
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.1); /* Slight glow effect */
+  animation: glow1 0.5s ease-in-out infinite alternate;
+  border-radius: 10%
+}
+
+/* Add a transition effect to the border color */
+.Cell:hover {
+  border-color: rgba(255, 255, 255, 0.4); /* Light border color with stronger glow on hover */
+}
+
+.Snake {
+  background: linear-gradient(to right, #fff, #808080);
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Snake shadow glow */
+}
+
+.Food {
+  background-color: neongreen;
+  box-shadow: 0 0 10px #333; /* Dark gray shadow for food */
+  animation: glow 0.5s ease-in-out infinite alternate;
+  border-radius: 50%; /* Round shape for food */
+}
+
+@keyframes glow1 {
+  from {
+    box-shadow: 0 0 1px rgba(25, 25, 25, 0.2);
+  }
+  to {
+    box-shadow: 0 0 1.5px rgba(25, 25, 25, 0.2), 0 0 2.0px rgba(25, 25, 25, 0.2), 0 0 2.5px rgba(25, 25, 25, 0.2);
+  }
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #00ff00;
+  }
+  to {
+    box-shadow: 0 0 15px #00ff00, 0 0 20px #00ff00, 0 0 25px #00ff00;
+  }
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.GameName {
+  margin: 0;
+  font-size: 24px;
+}
+
+.Score {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.RestartButton {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for the button */
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth button hover effect */
+}
+
+.RestartButton:hover {
+  background-color: #ff5733; /* Hover color */
+  transform: scale(1.05); /* Hover scale effect */
+}
+
+.GameOver {
+  font-size: 36px;
+  color: red;
+  margin-top: 20px;
+}
